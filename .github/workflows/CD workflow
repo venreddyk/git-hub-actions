@@ -1,0 +1,47 @@
+name : cd workflow
+
+on:
+
+pull_request:
+ branches: [release]
+
+approval:
+    needs: download-artifact
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: CINotify Email
+  # You may pin to the exact commit or the version.
+  # uses: cinotify/github-action@d99e3149178b27572a58ace227621c333884e3fb
+        uses: cinotify/github-action@v1.1.0
+        with:
+    # Recipient email address
+          to: venreddy@tibco.com
+
+    # Email subject
+          subject: approval request to deploy in Dev to Release ENV for the aplication  
+    # Email body
+          body: please approve ( https://github.com/venreddyk/git-hub-actions.git )
+          
+jobs: 
+
+  download-artifact:
+
+ runs-on: ubuntu-latest
+
+ steps:
+ -uses: actions/checkout@v2
+ -name: set up JDK 1.8
+  uses: actions/setup-java@v1
+  with:
+    java-version: '1.8'
+    distribution: 'adopt'
+    cache: maven
+ -name: Build with maven
+  run: echo "downloading artifact"
+  
+  deploy:
+   name: deploy to Dev
+  
+  runs-on: ubuntu-latest
+ 
