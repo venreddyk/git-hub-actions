@@ -1,9 +1,9 @@
-name : cd workflow
+name: DEV Workflow
 
 on:
 
-pull_request:
- branches: [release]
+  pull_request:
+    branches: [ dev ]
 
 jobs:
   build:
@@ -18,4 +18,4 @@ jobs:
           distribution: 'adopt'
           cache: maven
       - name: Build with Maven
-        run: mvn clean package
+        run: mvn clean install
