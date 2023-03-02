@@ -43,21 +43,3 @@ jobs:
 
 Test business user
  
-needs: approval
-    environment: 
-        name: dev
-    steps:
-      - name: Issues - Manual Workflow Approval
-  # You may pin to the exact commit or the version.
-  # uses: macnev2013/manual-approval@c613c02a2599519bba066f04e6732f038c65f747
-        uses: macnev2013/manual-approval@v1.0.18
-        with:
-    # Required approvers
-          approvers: https://github.com/Niladri579
-    # Secret
-          secret: ${{ secrets.GITHUB_TOKEN }}
-    # Minimum number of approvals to progress workflow
-          minimum-approvals: 1
-    # Timeout before approval
-          approval-wait: 30 
-  
