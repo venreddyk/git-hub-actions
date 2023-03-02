@@ -1,7 +1,8 @@
 name: CD Workflow
 
 on:
-  
+   push_request:
+    branches: [ release ] 
   pull_request:
     branches: [ release ]
 
