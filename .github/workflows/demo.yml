@@ -16,4 +16,4 @@ jobs:
             distribution: 'adopt'
             cache: maven
         - name: Build with Maven
-          run: echo "downloading artifact"
+          run: echo " downloading artifact "
