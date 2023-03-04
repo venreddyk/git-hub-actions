@@ -83,9 +83,16 @@ jobs:
         uses: cinotify/github-action@v1.1.0
         with:
     # Recipient email address
-          to: venreddy@tibco.com
+          to: ndey@tibco.com
 
     # Email subject
           subject: approval request to deploy in QA/UAT ENV for the aplication ( TEST ) 
     # Email body
-          body: please approve ( https://github.com/venreddyk/git-hub-actions.git )
+          body: please approve ( https://github.com/Niladri579/github-action-demo/actions )
+		  
+	download-artifact:
+	  needs: approval
+    runs-on: ubuntu-latest
+    steps:
+      - name: download-artifact
+        run: echo "$GITHUB_CONTEXT"	  
