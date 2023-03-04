@@ -90,9 +90,9 @@ jobs:
     # Email body
           body: please approve ( https://github.com/Niladri579/github-action-demo/actions )
 		  
-	download-artifact:
-	  needs: approval
+  download-artifact:
+    needs: approval
     runs-on: ubuntu-latest
     steps:
       - name: download-artifact
-        run: echo "$GITHUB_CONTEXT"	  
+        run: echo "Hello"	  
