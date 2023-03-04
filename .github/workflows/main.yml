@@ -20,7 +20,7 @@ jobs:
         run: mvn clean install
    
 
-  tage-version:
+  tag-version:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -34,7 +34,7 @@ jobs:
           
 
   store-atifact:
-    needs: build 
+    needs: tag-version 
     runs-on: ubuntu-latest
     
     steps:
@@ -53,7 +53,7 @@ jobs:
  
   deployment:
  
-    needs: build
+    needs: store-atifact 
     runs-on: ubuntu-latest
     
     steps:
