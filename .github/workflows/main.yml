@@ -96,6 +96,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: download-artifact
-        run: echo "Hellox"	  
+        run: echo "Hello"	  
         
         
