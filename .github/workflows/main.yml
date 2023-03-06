@@ -96,8 +96,7 @@ jobs:
         with:
     # Required approvers
           approvers: https://github.com/venreddyk/git-hub-actions.git
-    # Secret
-          secret: ${{ secrets.GITHUB_TOKEN }}
+
 
     # Minimum number of approvals to progress workflow
           minimum-approvals: 1
