@@ -83,7 +83,7 @@ jobs:
         uses: cinotify/github-action@v1.1.0
         with:
     # Recipient email address
-          to: ndey@tibco.com
+          to: venreddy@tibco.com
 
     # Email subject
           subject: approval request to deploy in QA/UAT ENV for the aplication ( TEST ) 
@@ -95,7 +95,9 @@ jobs:
         uses: macnev2013/manual-approval@v1.0.18
         with:
     # Required approvers
-          approvers: https://github.com/Niladri579
+          approvers: https://github.com/venreddyk/git-hub-actions.git
+    # Secret
+          secret: ${{ secrets.GITHUB_TOKEN }}
 
     # Minimum number of approvals to progress workflow
           minimum-approvals: 1
