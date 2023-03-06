@@ -83,12 +83,25 @@ jobs:
         uses: cinotify/github-action@v1.1.0
         with:
     # Recipient email address
-          to: ndey@tibco.com
+          to: venreddy@tibco.com
 
     # Email subject
           subject: approval request to deploy in QA/UAT ENV for the aplication ( TEST ) 
     # Email body
-          body: please approve ( https://github.com/Niladri579/github-action-demo/actions )		  
+          body: please approve ( https://github.com/venreddyk/git-hub-actions.git )	
+      - name: Issues - Manual Workflow Approval
+  # You may pin to the exact commit or the version.
+  # uses: macnev2013/manual-approval@c613c02a2599519bba066f04e6732f038c65f747
+        uses: macnev2013/manual-approval@v1.0.18
+        with:
+    # Required approvers
+          approvers: https://github.com/venreddy
+    # Secret
+          secret: ${{ secrets.GITHUB_TOKEN }}
+    # Minimum number of approvals to progress workflow
+          minimum-approvals: 1
+    # Timeout before approval
+          approval-wait: 30 
   download-artifact:
     needs: approval
     runs-on: ubuntu-latest
