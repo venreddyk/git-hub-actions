@@ -98,6 +98,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: download-artifact
-        run: echo "Hello"	  
+        run: echo "Hello world"	  
         
         
