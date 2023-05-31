@@ -3,7 +3,7 @@ name: Tibco Workflow
 on:
   
   pull_request:
-    branches: [ release ]
+    branches: [ dev ]
 
 jobs:
   build:
