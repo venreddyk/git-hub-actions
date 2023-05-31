@@ -3,7 +3,7 @@ name: Tibco Workflow
 on:
   
   pull_request:
-    branches: [ dev ]
+    branches: [ Dev ]
 
 jobs:
   build:
@@ -22,8 +22,8 @@ jobs:
          cache: maven
 
           
-      - name: Build BW6 Application
-        run: mvn clean install -f src/es.alertsManagment.service.v1.application.parent/pom.xml
+      - name: Build with maven
+        run: mvn clean install
 		
   Tag_version:
     
